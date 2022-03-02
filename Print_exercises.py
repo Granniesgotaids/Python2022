@@ -5,6 +5,8 @@ print("5")
 print("100s")
 print("2047")
 print("115-prolly dead lol")
+#What do I comment?
+#I don't understand this whole "Code comments" thing
 print(658/9)
 print(2022-1969)
 print("Minecraft")
@@ -16,8 +18,11 @@ print(5608*879053546476348673496734987693487698347689347683476893476893476893476
 print("bang")
 print("AIDS" * 8)
 print(5/2)
+print("\n")
 #4.3.11
 print("Kings\'s High School")
-print("toptext\nbottomtext)
-Variable = LOL
+print("toptext\nbottomtext")
+Variable = "lol"
 print(Variable)
+print(Variable * 8)
+print("I GOT DA AIDS DOWN IN AFRICAAAAAA")
