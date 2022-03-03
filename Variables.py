@@ -12,6 +12,10 @@ Year = 2022
 print("\n")
 print(Name)
 print(Age)
-Surname = Taylor
-School = Kings high school
-
+Surname = "Taylor"
+#Questions 12-21
+School = "Kingshighschool"
+print("Just tell me once again who's fat")#Not even a question but def worth adding
+FavFood = "RareSteak"
+Animal = "Cat"
+Chocolate 80
