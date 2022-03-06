@@ -18,4 +18,11 @@ School = "Kingshighschool"
 print("Just tell me once again who's fat")#Not even a question but def worth adding
 FavFood = "RareSteak"
 Animal = "Cat"
-Chocolate 80
+#Did an input thingy, don't know why. At least it works lol
+gun = input("Do you have guns")
+if gun == "no":
+	print("sad")
+elif gun == "yes":
+	print("Hell yeah")
+else:
+		print("Yes or no?")
