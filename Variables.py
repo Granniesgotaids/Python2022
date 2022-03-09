@@ -26,3 +26,11 @@ elif gun == "yes":
 	print("Hell yeah")
 else:
 		print("Yes or no?")
+#Back to work
+Chocolate = 30
+Score = 0
+Highscore = 0#noob
+Laps = 5
+Ammo = 45
+Gear = 4
+Speed = 40
