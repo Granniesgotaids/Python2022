@@ -26,7 +26,24 @@ else:
 	print("Hmmmmmmm, ok you can stay")
 """
 #12-17
-agee = int(input("How old are you"))
+agee = int(input("How old are you\n"))
 agee = agee + 10
-print(f"You will be {agee} in 10 years, you old lol")
-
+print(f"You will be {agee} in 10 years, you old lol\n")
+agee = agee - 10
+agee = 2021 - agee
+print(f"You were born in {agee}")
+apples = int(input("How many apples do you have?\n"))
+friends = int(input("How many friends do you have\n"))
+if friends == 0:
+	print("You sad sack")
+else:
+	print(f"Each person gets {apples//friends}")
+	print(f"You have {apples%friends} left over")
+#18-23
+pizza = int(input("How many pizzas do u want?\n"))
+fatties = int(input("How many peoples are you feeding?\n"))
+print(f"Each person gets{pizza//fatties}")
+print(f"There will be {pizza%fatties}\n")
+ohgod = pizza//fatties
+if ohgod > 10:
+	print("OH MY GOD YOU FAT ****")
