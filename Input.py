@@ -24,7 +24,6 @@ if strikes > 2:
 	print("Get out mate")
 else:
 	print("Hmmmmmmm, ok you can stay")
-"""
 #12-17
 agee = int(input("How old are you\n"))
 agee = agee + 10
@@ -40,10 +39,20 @@ else:
 	print(f"Each person gets {apples//friends}")
 	print(f"You have {apples%friends} left over")
 #18-23
+"""
 pizza = int(input("How many pizzas do u want?\n"))
 fatties = int(input("How many peoples are you feeding?\n"))
-print(f"Each person gets{pizza//fatties}")
-print(f"There will be {pizza%fatties}\n")
+print(f"Each person gets {pizza//fatties}")
+print(f"There will be {pizza%fatties} left\n")
 ohgod = pizza//fatties
-if ohgod > 10:
-	print("OH MY GOD YOU FAT ****")
+if ohgod > 5:
+	print("Calling the cardiac unit....")
+money = int(input("How much money do you have\n"))
+tv = int(input("How much does a tv cost\n"))
+if tv < 500:
+	print("Nahhhhhhhhh")
+money = money - tv
+print(f"You have ${money} left")
+#24-31
+tv = tv // 1.2
+print(f"If you wait for a 20% off sale the tv will cost {tv}")
