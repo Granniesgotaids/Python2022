@@ -1,6 +1,7 @@
 from adventurelib import *
 carpark = Room("""You are in an empty parking lot, seems a bit dodgy
 but mostly alright. The lights glow dimmly""")
+current_room = carpark
 @when("drink juice")
 def juice():
 	print("You die")
@@ -16,10 +17,11 @@ def crash():
 	 congratulations for completting this game""")
 def elevator():
 	global current_room
-current_room
 #check if door can be opened
-if current_room is not carppark:
+@when("enter elevator")
+if current_room is not carpark:
 	say("No elevator to enter")
+
 def main():
 	start()
 
