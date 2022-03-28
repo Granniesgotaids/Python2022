@@ -43,6 +43,21 @@ def travel(direction):
 		print(f"You go {direction}.")
 		print(current_room)
 
+#define items
+
+Item.description = "" #this adds a blank description to each item
+knife = Item("a dirty knife","knife")
+knife.description = "the knife has a dull sheen to it but it looks rather sharp"
+
+red_keycard = Item("a red keycard","keycard","red card","red card")
+red_keycard.description = "It's a red keycard. It probably opens a door or locker."
+
+Hammer = Item("a steel hammer","hammer")
+
+
+
+
+
 def main():
 	start()
 
