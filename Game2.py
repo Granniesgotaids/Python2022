@@ -77,7 +77,7 @@ def travel(direction):
 @when("look")
 def look():
 	print(current_room)
-	print(f"There are exits to the {curremt_room.exits()}.")
+	print(f"There are exits to the {current_room.exits()}.")
 	if len(current_room.items) > 0: #if there are some items in the room
 		print("You also see:")
 		for item in current_room.items:
@@ -86,7 +86,21 @@ def look():
 @when("get ITEM")
 @when("take ITEM")
 @when("pick up ITEM")
+def pickup(item):
+	if item in current_room.items:
+		t = current_room.items.take(item)
+		inventory.add(t)
+		print(f"You pick up the {item}")
+	else:
+		print(f"You don't see a {item}")
 
+@when("inventory")
+@when("show inventory")
+@when("what is in my pocket")
+def player_inventory():
+	print("You are carrying")
+	for item in inventory:
+		print(item)
 
 
 
