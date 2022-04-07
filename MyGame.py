@@ -31,8 +31,24 @@ is at the end of the room, Looks like it needs a key""")
 grandma_room = Room("""An angry looking grandma with a crow bar is approaching,
 Fight with whatever you can!""")
 
-freedome = Room("""A locked door to the outside, I'm pretty sure grandma's key
+freedom = Room("""A locked door to the outside, I'm pretty sure grandma's key
 would unlock that door""")
+
+#Directions
+start_room.north = room_1
+start_room.south = dog_room
+room_1.east = knarly_room
+dog_room.east = key_room
+knarly_room.south = key_room
+key_room.south = cuboard_room
+cuboard_room.south = grandma_room
+grandma_room.west = freedom
+
+#Define items
+Item.description = "" #This adds a blank description to each item
+
+brick = Item("brick")
+brick.description = "the brick is heavy and fairly strong, quite destructive when used in that manner"
 
 
 def main():
