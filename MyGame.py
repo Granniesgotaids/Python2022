@@ -31,8 +31,7 @@ is at the end of the room, Looks like it needs a key""")
 grandma_room = Room("""An angry looking grandma with a crow bar is approaching,
 Fight with whatever you can!""")
 
-freedom = Room("""A locked door to the outside, I'm pretty sure grandma's key
-would unlock that door""")
+freedom = Room("""You are free!""")
 
 #Directions
 start_room.north = room_1
@@ -49,6 +48,83 @@ Item.description = "" #This adds a blank description to each item
 
 brick = Item("brick")
 brick.description = "the brick is heavy and fairly strong, quite destructive when used in that manner"
+
+hammer = Item("hammer")
+hammer.description = "the hammer is rusty but still quite strong"
+
+burger = Item("burger")
+burger.description = "Edible, I think? Looks a bit dodgy"
+
+beer = Item("beer")
+beer.description = "unopened perfectly good beer, wouldve been better in a fridge"
+
+key = Item("key")
+key.description = "should unlock something, it is a key after all"
+
+bow = Item("bow")
+bow.description = "a powerful compound bow with several arrows attached to the side"
+
+#add items to bags
+dog_room.items.add(brick)
+room_1.items.add(hammer)
+knarly_room.items.add(burger)
+knarly_room.items.add(beer)
+key_room.items.add(key)
+cuboard_room.items.add(bow)
+
+#defines variables
+current_room = start_room
+
+
+@when ("go DIRECTION")
+def travel(direction):
+	global current_room
+	if direction in current_room.exits():
+		current_room = current_room.exit(direction)
+		print(f"You go {direction}.")
+		print(current_room)
+		print(current_room.exits())
+	else:
+		print("You can't go that way")
+
+
+@when("look")
+def look():
+	print(current_room)
+	print(f"There are exits to the {current_room.exits()}.")
+	if len(current_room.items) > 0: #if there are some items in the room
+		print("You also see:")
+		for item in current_room.items:
+			print(item)#print out each item
+
+@when("get ITEM")
+@when("take ITEM")
+@when("pick up ITEM")
+def pickup(item):
+	if item in current_room.items:#check if item is in room
+		t = current_room.items.take(item)#take it out of room
+		inventory.add(t)#put into inventory
+		print(f"You pick up the {item}")
+	else:
+		print(f"You don't see a {item}")#otherwise tell user there is no item
+
+@when("inventory")
+@when("show inventory")
+@when("what is in my pocket")
+def player_inventory():
+	print("You are carrying")
+	for item in inventory:
+		print(item)
+
+@when("look at ITEM")
+def look_at(item):
+	if item in inventory:
+		t = inventory.find(item)
+		print(t.description)
+	else:
+		print(f"You aren't carrying an {item}")
+
+
 
 
 def main():
