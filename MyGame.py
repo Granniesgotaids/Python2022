@@ -74,7 +74,8 @@ cuboard_room.items.add(bow)
 
 #defines variables
 current_room = start_room
-
+brick_taken = false
+inventory = Bag()
 
 @when ("go DIRECTION")
 def travel(direction):
@@ -123,6 +124,49 @@ def look_at(item):
 		print(t.description)
 	else:
 		print(f"You aren't carrying an {item}")
+
+@when("search microwave")
+@when("open microwave")
+@when("turn on microwave")
+def microwave():
+	global microwave
+	global current_room
+	if current_room == knarly_room: #You bout to die
+		print("You touch the microwave, ZAPP. You are electrocuted and die instantly")
+		current_room = start_room
+		print("Game restarted")#Game restarted
+	else:
+		print("No microwave here")
+
+@when("get brick")
+@when("take brick")
+@when("pick up brick")
+def brick_taken():
+	global brick_taken
+	brick_taken = true#BUG will not register whether brick is aval
+
+
+
+
+
+@when("attack dog")
+def fight_dog():
+	global fight_dog
+	if current_room == dog_room and brick_taken == true:
+		print("You hit the dog with a brick and it dies")
+	elif current_room == dog_room and brick_taken == false:
+		print("You fist fight the dog and it bites your main artery, you bleed out and die")
+	elif current_room == dog_room and hammer_taken == true
+
+	else:
+
+
+
+
+
+
+
+
 
 
 
